@@ -2,27 +2,58 @@
 
 class Category
 {
-
     private ? int $id = null;
-    
-    public function __construct () {
-        
+
+    public function __construct(private string $title, private string $description)
+    {
+
     }
-    
-    public function getId() : ?int {
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function setId(?int $id) : void {  
+    /**
+     * @param int|null $id
+     */
+    public function setId(?int $id): void
+    {
         $this->id = $id;
     }
 
-    public function getCategory() : string {
-        return $this->category;
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
     }
 
-    public function setCategory(string $category) : void {  
-        $this->category = $category;
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
     }
 
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
 }

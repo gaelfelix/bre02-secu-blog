@@ -2,43 +2,74 @@
 
 class Comment
 {
-
     private ? int $id = null;
-    
-    public function __construct (private string $comment, private string $user, private string $post) {
-        
+
+    public function __construct(private string $content, private User $user, private Post $post)
+    {
+
     }
-    
-    public function getId() : ?int {
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function setId(?int $id) : void {  
+    /**
+     * @param int|null $id
+     */
+    public function setId(?int $id): void
+    {
         $this->id = $id;
     }
-  
-     public function getComment() : string {
-        return $this->comment;
+
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content;
     }
 
-    public function setComment(string $comment) : void {  
-        $this->comment = $comment;
+    /**
+     * @param string $content
+     */
+    public function setContent(string $content): void
+    {
+        $this->content = $content;
     }
-  
-    public function getUser() : string {
+
+    /**
+     * @return User
+     */
+    public function getUser(): User
+    {
         return $this->user;
     }
 
-    public function setUser(string $user) : void {  
+    /**
+     * @param User $user
+     */
+    public function setUser(User $user): void
+    {
         $this->user = $user;
     }
 
-    public function getPost() : string {
+    /**
+     * @return Post
+     */
+    public function getPost(): Post
+    {
         return $this->post;
     }
 
-    public function setPost(string $post) : void {  
+    /**
+     * @param Post $post
+     */
+    public function setPost(Post $post): void
+    {
         $this->post = $post;
     }
-    
 }
